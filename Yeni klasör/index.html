@@ -1,0 +1,113 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14181c"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>365</title>
+<style>
+:root{--bg:#f3f4f8;--c:#fff;--t:#161a23;--m:#6b7280;--a:#5b5bd6;--a2:#8b5cf6;--b:#e7e9f0;--on:#ecebff;--sh:0 1px 2px rgba(20,24,40,.05),0 8px 24px rgba(20,24,40,.06)}
+[data-theme=dark]{--bg:#0d0f14;--c:#171a21;--t:#eef0f4;--m:#8b93a1;--a:#8b8bff;--a2:#b69cff;--b:#262a34;--on:#22244a;--sh:none}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#app{padding:calc(env(safe-area-inset-top,0px) + 18px) 16px 120px;max-width:560px;margin:auto}
+h1{font-size:26px;font-weight:800;letter-spacing:-.5px;margin:0 0 4px;text-transform:capitalize}h2{font-size:18px;margin:22px 0 8px}
+.m{color:var(--m);font-size:14px;margin:4px 0}small{color:var(--m);font-size:12px}
+.card{background:var(--c);border-radius:20px;padding:16px;margin:12px 0;box-shadow:var(--sh);border:1px solid var(--b)}
+.hero{background:linear-gradient(135deg,#5b5bd6,#8b5cf6);color:#fff;border-radius:24px;padding:20px;display:flex;align-items:center;gap:18px;box-shadow:0 12px 28px rgba(91,91,214,.35)}
+.hero h1{color:#fff;font-size:22px}.hero p{margin:2px 0;color:rgba(255,255,255,.85);font-size:14px}.hero .bar{background:rgba(255,255,255,.25)}.hero .bar i{background:#fff}.hero>div{flex:1}
+.ring{position:relative;width:88px;height:88px;flex:none}.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:20px}
+.bar{height:8px;background:var(--b);border-radius:4px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--a2));border-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip,.pb,.row{font:inherit;color:var(--t);background:var(--bg);border:1.5px solid transparent;border-radius:999px;padding:9px 14px;transition:transform .08s}
+.chip:active,.pb:active,.row:active,.btn:active,.wife:active{transform:scale(.97)}
+.chip.on{background:var(--a);color:#fff;font-weight:600}
+.pr{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+.pb{border-radius:16px;padding:12px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:14px}.pb.on{background:var(--a);color:#fff}.pb.on small{color:rgba(255,255,255,.8)}
+.row{display:flex;align-items:center;gap:14px;width:100%;text-align:left;margin:8px 0;border-radius:18px;padding:15px 16px;background:var(--c);box-shadow:var(--sh);border:1px solid var(--b)}
+.ck{width:26px;height:26px;border:2px solid var(--m);border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-size:15px}
+.row.on{background:var(--on);border-color:var(--a)}.row.on .ck{background:var(--a);border-color:var(--a)}.row.on .ck::after{content:"✓"}
+.su{display:flex;align-items:center;gap:14px}.su button{width:48px;height:48px;font-size:24px;border-radius:50%;border:0;background:var(--on);color:var(--a);font-weight:700}.su span{flex:1;text-align:center;font-weight:600}
+.wife{width:100%;font:inherit;font-size:18px;font-weight:700;padding:17px;border-radius:20px;border:0;background:var(--c);color:#c0365a;box-shadow:var(--sh);border:1px solid var(--b);margin:8px 0}.wife.on{background:linear-gradient(135deg,#f472a0,#fb7185);color:#fff;border-color:transparent}
+input,select,textarea{font:inherit;width:100%;padding:13px 14px;border:1.5px solid var(--b);border-radius:14px;background:var(--bg);color:var(--t);margin:5px 0;outline:0}input:focus,select:focus{border-color:var(--a)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button.btn{font:inherit;font-weight:700;background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;border:0;border-radius:14px;width:100%;padding:14px;margin-top:8px}button.btn.s{background:var(--bg);color:var(--t);border:1.5px solid var(--b)}
+details{border-top:1px solid var(--b);padding:10px 0}summary{font-weight:600}
+td,th{padding:5px 6px;text-align:left;font-size:14px}table{width:100%;border-collapse:collapse}
+nav{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);display:flex;gap:4px;background:color-mix(in srgb,var(--c) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--b);border-radius:24px;padding:6px;box-shadow:0 10px 30px rgba(0,0,0,.15);max-width:536px;margin:auto}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 0;border:0;background:none;font:inherit;font-size:11px;color:var(--m);border-radius:18px}nav button.on{color:var(--a);background:var(--on);font-weight:700}
+.big{font-size:34px;font-weight:800}
+</style></head><body><main id="app"></main><nav id="nav"></nav>
+<script>
+const $=s=>document.querySelector(s),E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let D,tab='bugun';
+const dk=(d=new Date())=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const ago=n=>{const d=new Date();d.setDate(d.getDate()-n);return dk(d)};
+const db=new Promise((r,j)=>{const q=indexedDB.open('p365',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>r(q.result);q.onerror=j});
+const load=async()=>{const d=await db;return new Promise(r=>{const q=d.transaction('kv').objectStore('kv').get('data');q.onsuccess=()=>r(q.result);q.onerror=()=>r()})};
+const save=async()=>{const d=await db;d.transaction('kv','readwrite').objectStore('kv').put(D,'data')};
+const P=[['f','Sabah'],['o','Öğle'],['i','İkindi'],['a','Akşam'],['y','Yatsı']];
+const DT={normal:'Normal iş günü',yorucu:'Çok yorucu gün',izin:'İzin günü',dinlenme:'Hasta / dinlenme',yogun:'Beklenmedik yoğunluk'};
+const PLAN={normal:'Antrenman 40 dk, KPSS 45 dk + 10 soru, okuma 30 dk. Yatış 23.00.',yorucu:'Antrenman yerine 10 dk mobilite. KPSS: 20 dk video veya 10 soru. Okuma 15 dk. Erken yat.',izin:'Tam antrenman, 20-30 dk yürüyüş veya hafif koşu, KPSS için 2 saatlik blok, yazmaya serbest zaman.',dinlenme:"Sadece namaz, Kur'an, su ve uyku zorunlu. Gerisi isteğe bağlı. Toparlanma tembellik değildir.",yogun:"Asgari plan: namaz, Kur'an, 10 dk okuma, 5 soru. Kalanı yarına yük bindirmeden bırakılır."};
+const WK=[['A · Göğüs, triceps, karın',[['Şınav','3×(max−5)','90 sn'],['Dambıl yer presi','3×10-12','90 sn'],['Dambıl omuz presi','3×10','90 sn'],['Başın üstü triceps','3×12','60 sn'],['Plank','3×30 sn','45 sn']]],
+['B · Sırt, biceps',[['Barfiks (yapamazsan negatif: 5 sn iniş)','3×3-5','120 sn'],['Tek kol dambıl kürek','3×10 (her kol)','90 sn'],['Dambıl curl','3×12','60 sn'],['Ters kanat (öne eğik)','3×12','60 sn'],['Dead bug','3×10','45 sn']]],
+['C · Bacak, omuz',[['Goblet squat','3×12','90 sn'],['Bulgar split squat','3×8 (her bacak)','90 sn'],['Rumen deadlift','3×10','90 sn'],['Baldır kaldırma','3×15','45 sn'],['Yana omuz kaldırma','3×12','60 sn']]]];
+const day=(k=dk())=>D.days[k]||(D.days[k]={c:{},w:0,wife:false,type:'normal',rv:{}});
+const tasksFor=t=>['f','o','i','a','y','kuran','oku','bes','su'].concat(t=='dinlenme'||t=='yogun'?[]:['antr']).concat(t=='dinlenme'?[]:['kpss']);
+const done=(d,id)=>id=='su'?d.w>=10:!!d.c[id];
+const pct=k=>{const d=D.days[k];if(!d)return 0;const t=tasksFor(d.type);return Math.round(100*t.filter(i=>done(d,i)).length/t.length)};
+const dayN=()=>Math.floor((new Date(dk())-new Date(D.start))/864e5)+1;
+const nextW=()=>Object.values(D.days).filter(d=>d.c.antr).length%3;
+const lb={kuran:"Kur'an (5 sayfa)",oku:'Kitap (30 dk)',bes:'Beslenme hedefine uygun yedim'};
+function streaks(){let cur=0,best=0,run=0;const n=dayN();for(let i=n-1;i>=0;i--){const k=ago(i);if(pct(k)>=50){run++;best=Math.max(best,run)}else run=0}
+ for(let i=0;i<n;i++){if(pct(ago(i))>=50)cur++;else if(i>0)break}return[cur,best]}
+function vBugun(){const k=dk(),d=day(),n=dayN(),p=pct(k),ids=tasksFor(d.type),wi=nextW();
+ const al=d.type=='yorucu'?'Mobilite (10 dk)':'Antrenman: '+WK[wi][0];
+ const wy=Object.keys(D.days).filter(x=>x>=ago(6)&&D.days[x].c.yaz).length;
+ let h=`<div class=hero><div class=ring><svg viewBox="0 0 80 80" width=88 height=88><circle cx=40 cy=40 r=34 fill=none stroke="rgba(255,255,255,.25)" stroke-width=8 /><circle cx=40 cy=40 r=34 fill=none stroke="#fff" stroke-width=8 stroke-linecap=round stroke-dasharray="${p*2.136} 214" transform="rotate(-90 40 40)"/></svg><b>%${p}</b></div><div><h1>${new Date().toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long'})}</h1><p>Gün ${n} / 365 · yıl %${Math.min(100,Math.round(n/3.65))}</p><div class=bar><i style="width:${Math.min(100,n/3.65)}%"></i></div></div></div>
+ <div class=card><b>Bugün nasıl bir gün?</b><div class=chips>${Object.entries(DT).map(([a,b])=>`<button class="chip ${d.type==a?'on':''}" data-a=dt data-v=${a}>${b}</button>`).join('')}</div><p class=m>${PLAN[d.type]}</p></div>
+ <div class=card><b>Namaz</b><div class=pr>${P.map(([a,b])=>`<button class="pb ${d.c[a]?'on':''}" data-a=chk data-v=${a}>${b}<small>${E(D.set.vakit[a]||'--:--')}</small></button>`).join('')}</div></div>`;
+ ids.filter(i=>lb[i]||i=='antr'||i=='kpss').forEach(i=>h+=`<button class="row ${d.c[i]?'on':''}" data-a=chk data-v=${i}><span class=ck></span>${i=='antr'?al:i=='kpss'?'KPSS çalışması':lb[i]}</button>`);
+ h+=`<button class="row ${d.c.yaz?'on':''}" data-a=chk data-v=yaz><span class=ck></span><span>Yazma <small>(isteğe bağlı · son 7 günde ${wy}/3)</small></span></button>
+ <div class="card su"><b>Su</b><button data-a=su data-v=-1>−</button><span>${d.w} / 10 bardak <small>(≈${d.w*0.25} L)</small></span><button data-a=su data-v=1>+</button></div>
+ <button class="wife ${d.wife?'on':''}" data-a=wife>Eşimleyim ❤️</button>
+ <div class=card><b>Beslenme hedefi (tahmini)</b><p class=m>${D.set.kcal} kcal · ${D.set.prot} g protein. Kesin değil; kilo ortalamana göre ayarlanır.</p><p class=m>İş yeri kahvaltısı: haşlanmış yumurta + peynir + tam buğday ekmek, yulaf + süt + muz, ya da ayran + kuruyemiş + meyve. Öğle: önce protein (et, tavuk, balık, mercimek), sonra pilav/makarna porsiyonunu küçült.</p></div>
+ <div class=card><b>Akşam değerlendirmesi</b><input id=rn placeholder="Neyi tamamlayamadım, neden?" value="${E(d.rv.n)}"><input id=re type=number min=1 max=5 placeholder="Enerji (1-5)" value="${E(d.rv.e)}"><input id=ry placeholder="Yarın neyi değiştirmeliyim?" value="${E(d.rv.y)}"><button class=btn data-a=rv>Kaydet</button><p class=m>Eksik kalanlar yarına yığılmaz. Yarın planı, yukarıdaki gün tipine göre yeniden başlar.</p></div>`;return h}
+function vBeden(){const B=D.body,w=B.filter(x=>x.kg),a7=w.filter(x=>x.d>=ago(6)).map(x=>x.kg),a14=w.filter(x=>x.d<ago(6)&&x.d>=ago(13)).map(x=>x.kg),av=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:0;
+ const n7=av(a7),n14=av(a14),df=n7&&n14?n7-n14:null;
+ let tip='Karar için en az 2 hafta kilo kaydı gerekir.';if(df!==null)tip=df<0.1?'Haftalık ortalama artış düşük: kalori hedefini 150 kcal artırmayı düşün.':df>0.4?'Artış hızlı: yağ artışı olabilir, hedefi 150 kcal düşürmeyi düşün.':'Artış hızı uygun aralıkta (≈0.1-0.4 kg/hafta).';
+ const pts=w.slice(-20).map(x=>x.kg),mn=Math.min(...pts),mx=Math.max(...pts);
+ const sp=pts.length>1?`<svg viewBox="0 0 200 50" width="100%" height="60"><polyline fill=none stroke="var(--a)" stroke-width=2 points="${pts.map((v,i)=>`${i*200/(pts.length-1)},${46-(v-mn)/(mx-mn||1)*42}`).join(' ')}"/></svg>`:'';
+ let h=`<h1>Beden</h1><div class=card><div class=g2><input id=kg type=number step=.1 placeholder="Kilo (kg)"><input id=bel type=number step=.5 placeholder="Bel (cm)"></div><button class=btn data-a=bw>Kaydet</button><p class=m>7 günlük kilo ortalaması: <b>${n7?n7.toFixed(1)+' kg':'-'}</b>${df!==null?' ('+(df>=0?'+':'')+df.toFixed(2)+' kg)':''}</p><p class=m>${tip}</p>${sp}</div>
+ <div class=card><b>Son kayıtlar</b><table>${B.slice(-6).reverse().map(x=>`<tr><td>${x.d.slice(5)}</td><td>${x.kg?x.kg+' kg':''}</td><td>${x.bel?x.bel+' cm':''}</td></tr>`).join('')||'<tr><td>Henüz kayıt yok. İlk kaydı sabah, tuvaletten sonra yap.</td></tr>'}</table></div>
+ <h2>Antrenman planı (haftada 3 gün)</h2><p class=m>Sıradaki: ${WK[nextW()][0]}. Önce 2 hafta ısınma: tüm setlerde 2 tekrar bırak. 3 sette de üst tekrara çıkınca 1-2 kg artır. Ağrı olursa hareketi bırak.</p>`;
+ WK.forEach(([t,ex])=>h+=`<details><summary>${t}</summary><table>${ex.map(e=>`<tr><td>${e[0]}</td><td>${e[1]}</td><td>${e[2]}</td></tr>`).join('')}</table></details>`);
+ return h+`<div class=card><b>Kondisyon</b><p class=m>Haftada 2 kez: 1 dk hafif koşu + 2 dk yürüyüş × 8. Başlangıç testin (12 dk rahat tempo mesafesi) yapılana kadar uzun koşu yok. Her iki haftada bir koşu dakikasını 30 sn uzat.</p><p class=m>Şınav testi: ayda bir dinlenmiş halde maksimum sayıyı not al.</p></div>`}
+function vKpss(){const K=D.kpss,wk=K.filter(x=>x.d>=ago(6)),dk_=wk.reduce((s,x)=>s+x.dk,0),sq=wk.reduce((s,x)=>s+x.s,0),yy=wk.reduce((s,x)=>s+x.y,0),due=K.map((x,i)=>[x,i]).filter(([x])=>x.tk&&!x.dn&&x.tk<=dk());
+ return `<h1>KPSS GY-GK</h1><p class=m>Son 7 gün: ${dk_} dk · ${sq} soru${sq?' · doğruluk %'+Math.round(100*(sq-yy)/sq):''}. Başlangıç hedefi: günde 5-10 soru.</p>
+ <div class=card><select id=kt><option>Çalışma</option><option>Deneme</option></select><select id=kd>${['Türkçe','Matematik','Geometri','Tarih','Coğrafya','Vatandaşlık','Güncel'].map(x=>`<option>${x}</option>`).join('')}</select><input id=kk placeholder="Konu / izlenen video"><div class=g2><input id=km type=number placeholder="Süre (dk)"><input id=ks type=number placeholder="Soru"></div><input id=ky type=number placeholder="Yanlış sayısı"><button class=btn data-a=kp>Kaydet</button><p class=m>Çalışma kayıtlarına 3 gün sonrası için tekrar tarihi otomatik eklenir. Önemli bilgileri tek cümleyle not al.</p></div>
+ <div class=card><b>Bugün tekrar edilecekler</b>${due.map(([x,i])=>`<button class="row" data-a=tk data-v=${i}><span class=ck></span>${E(x.ders)}: ${E(x.konu)||'-'}</button>`).join('')||'<p class=m>Yok.</p>'}</div>
+ <div class=card><b>Son kayıtlar</b><table>${K.slice(-6).reverse().map(x=>`<tr><td>${x.d.slice(5)}</td><td>${E(x.ders)}</td><td>${x.tur=='Deneme'?'net '+(x.s-x.y-x.y/4).toFixed(1):x.dk+' dk'}</td><td>${x.s}/${x.y}</td></tr>`).join('')||'<tr><td>Kayıt yok.</td></tr>'}</table></div>`}
+function vRapor(){const n=dayN(),wk=[...Array(7)].map((_,i)=>pct(ago(i))),avg=Math.round(wk.reduce((s,x)=>s+x,0)/7),[cu,be]=streaks(),good=wk.filter(x=>x>=50).length;
+ const span=Math.min(30,n),A=[['Namaz',d=>P.every(([a])=>d.c[a])],["Kur'an",d=>d.c.kuran],['Okuma',d=>d.c.oku],['Antrenman',d=>d.c.antr,1],['KPSS',d=>d.c.kpss,2],['Beslenme',d=>d.c.bes],['Su',d=>d.w>=10]];
+ const rates=A.map(([nm,f,x])=>{let t=0,c=0;for(let i=0;i<span;i++){const d=D.days[ago(i)];if(!d)continue;if((x==1&&(d.type=='dinlenme'||d.type=='yogun'))||(x==2&&d.type=='dinlenme'))continue;t++;if(f(d))c++}return[nm,t?Math.round(100*c/t):0]});
+ const sorted=[...rates].sort((a,b)=>a[1]-b[1]),wife=Object.values(D.days).filter(d=>d.wife).length;
+ return `<h1>Rapor</h1><div class=card><div class=big>%${avg}</div><p class=m>Haftalık tutarlılık · ${good}/7 gün %50 üzeri</p><p class=m>Mevcut seri: ${cu} gün · En uzun seri: ${be} gün. Seri, günün en az %50'sini tamamlamaktır; kötü bir gün geçmiş ilerlemeyi silmez.</p></div>
+ <div class=card><b>Alanlar (son ${span} gün)</b>${rates.map(([a,b])=>`<p class=m>${a} %${b}</p><div class=bar><i style="width:${b}%"></i></div>`).join('')}<p class=m>En çok ihmal edilen: <b>${sorted[0][0]}</b>. En istikrarlı: <b>${sorted[6][0]}</b>.</p></div>
+ <div class=card><p class=m>Eşimle vakit geçirilen gün: ${wife} ❤️</p><p class=m>Kayıtlı gün: ${Object.keys(D.days).length} · kilo kaydı: ${D.body.length} · KPSS kaydı: ${D.kpss.length}</p></div>`}
+function vAyar(){const s=D.set;return `<h1>Ayarlar</h1><div class=card><b>Tema</b><div class=chips>${[['auto','Sistem'],['light','Açık'],['dark','Koyu']].map(([a,b])=>`<button class="chip ${s.theme==a?'on':''}" data-a=th data-v=${a}>${b}</button>`).join('')}</div></div>
+ <div class=card><b>Namaz vakitleri</b><p class=m>Mevsime göre değişir; kendin güncelle (ör. 05:42).</p><div class=g2>${P.map(([a,b])=>`<label><small>${b}</small><input id=v_${a} value="${E(s.vakit[a])}" placeholder="SS:DD"></label>`).join('')}</div><b>Hedefler</b><div class=g2><label><small>Kalori</small><input id=sk type=number value="${s.kcal}"></label><label><small>Protein (g)</small><input id=sp type=number value="${s.prot}"></label></div><button class=btn data-a=vk>Kaydet</button></div>
+ <div class=card><b>Yedekleme</b><p class=m>Verilerin yalnızca bu telefonda, tarayıcı depolamasında durur. Tarayıcı verilerini temizlersen, uygulamayı kaldırırsan veya telefonu değiştirirsen kaybolur. Haftada bir yedek al ve dosyayı telefon dışında (ör. bilgisayara/e-postana) sakla.</p><button class=btn data-a=ex>Yedeği indir (JSON)</button><button class="btn s" onclick="$('#im').click()">Yedekten geri yükle</button><input id=im type=file accept=".json,application/json" hidden></div>
+ <div class=card><p class=m>365 Disiplin · veriler buluta gönderilmez · hesap ve sunucu yok. Başlangıç: ${D.start}</p></div>`}
+const V={bugun:vBugun,beden:vBeden,kpss:vKpss,rapor:vRapor,ayar:vAyar};
+const IC={bugun:'<path d="M3 11l9-8 9 8v10H3z"/>',beden:'<path d="M3 12h4l3-8 4 16 3-8h4"/>',kpss:'<path d="M4 4h10a4 4 0 014 4v12H8a4 4 0 01-4-4z"/>',rapor:'<path d="M5 20V10M12 20V4M19 20v-7"/>',ayar:'<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>'};for(const k in IC)IC[k]='<svg viewBox="0 0 24 24" width=22 height=22 fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round>'+IC[k]+'</svg>';
+function render(){const y=scrollY;$('#app').innerHTML=V[tab]();$('#nav').innerHTML=[['bugun','Bugün'],['beden','Beden'],['kpss','KPSS'],['rapor','Rapor'],['ayar','Ayarlar']].map(([a,b])=>`<button class="${tab==a?'on':''}" data-a=tab data-v=${a}>${IC[a]}<span>${b}</span></button>`).join('');scrollTo(0,y)}
+const theme=()=>{const t=D.set.theme;document.documentElement.dataset.theme=t=='auto'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):t};
+const v=id=>$('#'+id).value.trim(),num=id=>parseFloat(v(id).replace(',','.'));
+const A={tab:x=>{tab=x;scrollTo(0,0)},dt:x=>{day().type=x},chk:x=>{const d=day();d.c[x]=!d.c[x]},su:x=>{const d=day();d.w=Math.max(0,d.w+ +x)},wife:()=>{const d=day();d.wife=!d.wife},
+ rv:()=>{day().rv={n:v('rn'),e:v('re'),y:v('ry')}},
+ bw:()=>{const kg=num('kg'),bel=num('bel');if(!kg&&!bel)return alert('Kilo veya bel ölçüsü gir.');D.body.push({d:dk(),kg:kg||0,bel:bel||0})},
+ kp:()=>{const s=parseInt(v('ks'))||0,y=parseInt(v('ky'))||0,m=parseInt(v('km'))||0;if(!m&&!s)return alert('Süre veya soru sayısı gir.');if(y>s)return alert('Yanlış, çözülen sorudan fazla olamaz.');const t=$('#kt').value,tk=new Date();tk.setDate(tk.getDate()+3);D.kpss.push({d:dk(),tur:t,ders:$('#kd').value,konu:v('kk'),dk:m,s,y,tk:t=='Çalışma'?dk(tk):null});if(m||s)day().c.kpss=true},
+ tk:i=>{D.kpss[i].dn=true},th:x=>{D.set.theme=x;theme()},
+ vk:()=>{P.forEach(([a])=>D.set.vakit[a]=v('v_'+a));D.set.kcal=parseInt(v('sk'))||D.set.kcal;D.set.prot=parseInt(v('sp'))||D.set.prot;alert('Kaydedildi.')},
+ ex:()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(D)],{type:'application/json'}));a.download='p365-yedek-'+dk()+'.json';a.click()}};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(!t||!A[t.dataset.a])return;navigator.vibrate&&navigator.vibrate(8);A[t.dataset.a](t.dataset.v);save();render()});
+document.addEventListener('change',e=>{if(e.target.id!='im')return;const f=e.target.files[0];if(!f)return;f.text().then(x=>{try{const j=JSON.parse(x);if(!j.days||!j.set)throw 0;if(!confirm('Mevcut verilerin bu yedekle değiştirilecek. Devam edilsin mi?'))return;D=j;save();theme();render();alert('Yedek yüklendi.')}catch{alert('Geçersiz yedek dosyası.')}})});
+(async()=>{D=await load()||{days:{},body:[],kpss:[],start:dk(),set:{theme:'auto',vakit:{f:'',o:'',i:'',a:'',y:''},kcal:3000,prot:140}};await save();theme();render();
+ if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();
+ if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js')})();
+</script></body></html>
